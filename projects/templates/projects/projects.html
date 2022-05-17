@@ -1,8 +1,26 @@
 {% extends 'main.html' %}
 
 {% block content %}
-  
-<h1>Projects Template</h1>
-<p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</p>
+
+<p>Hello you are on the {{page}} page</p>
+
+{% if number > 10 %}
+	<p>Number is greater than 10</p>
+
+{% elif number == 10 %}
+	<p>Number is exactly 10</p>
+
+{% else %}
+	<p>Number is less than 10</p>
+{% endif %}
+
+<hr>
+
+<h1>Projects</h1>
+<ul>
+	{% for project in projects %}
+		<li>Title: <a href="{% url 'project' project.id %}">{{ project.title }}</a> --- {{ project.description}}</li>
+	{% endfor %}
+</ul>
 
 {% endblock content %}
