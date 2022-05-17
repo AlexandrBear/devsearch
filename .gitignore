@@ -1,4 +1,7 @@
 # created by virtualenv automatically
-/env
-/__pycache__
+env
+__pycache__
+migrations
 db.sqlite3
+settings.cpython-38.pyc
+settings.cpython-38.pyc
