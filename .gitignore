@@ -2,6 +2,6 @@
 env
 __pycache__
 migrations
+.vscode
 db.sqlite3
-settings.cpython-38.pyc
 settings.cpython-38.pyc
