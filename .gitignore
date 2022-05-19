@@ -1,6 +1,7 @@
 # created by virtualenv automatically
 env
 .vscode
+images
 __pycache__
 migrations
 .vscode
