@@ -1,5 +1,4 @@
 # created by virtualenv automatically
-devsearch/__pycache__/urls.cpython-38.pyc
 env
 .vscode
 images
@@ -8,3 +7,4 @@ migrations
 .vscode
 db.sqlite3
 settings.cpython-38.pyc
+profile.html
