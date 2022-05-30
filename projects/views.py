@@ -1,20 +1,22 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+
 from .models import Project
 from .forms import ProjectForm
+from .utils import searchProject
 
 
 def projects(request):
-    projects = Project.objects.all()
-    context = {'projects':projects}
+    projects, search_query = searchProject(request)
+    context = {'projects': projects, 'search_query': search_query}
     return render(request, 'projects/projects.html', context)
 
 
 def project(request, pk):
     projectObj = Project.objects.get(id=pk)
-    
+
     return render(request, 'projects/single-project.html',
-                    {'project': projectObj})
+                  {'project': projectObj})
 
 
 @login_required(login_url='login')

@@ -11,11 +11,11 @@
             </div>
 
             <div class="hero-section__search">
-                <form class="form" action="#" method="get">
+                <form class="form" action="{% url 'profiles' %}" method="get">
                     <div class="form__field">
                         <label for="formInput#search">Search Developers </label>
-                        <input class="input input--text" id="formInput#search" type="text" name="text"
-                            placeholder="Search by developer name" />
+                        <input class="input input--text" id="formInput#search" type="text" name="search_query"
+                            value="{{ search_query }}" placeholder="Search by developer name" />
                     </div>
 
                     <input class="btn btn--sub btn--lg" type="submit" value="Search" />
@@ -33,8 +33,7 @@
                     <div class="dev">
                         <a href="{% url 'user-profile' profile.id %}" class="card__body">
                             <div class="dev__profile">
-                                <img class="avatar avatar--md" src="{{ profile.profile_image.url }}"
-                                    alt="image" />
+                                <img class="avatar avatar--md" src="{{ profile.profile_image.url }}" alt="image" />
                                 <div class="dev__meta">
                                     <h3>{{ profile.name }}</h3>
                                     <h5>{{ profile.short_intro|slice:"60" }}</h5>
@@ -48,7 +47,7 @@
                                     <small>{{ skill }}</small>
                                 </span>
                                 {% endfor %}
-                            
+
                             </div>
                         </a>
                     </div>
